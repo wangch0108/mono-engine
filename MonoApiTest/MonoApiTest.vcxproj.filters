@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\mono">
+      <UniqueIdentifier>{F1F8DE69-DD5B-6E0E-86E1-A6C472233A91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\mono\jit">
+      <UniqueIdentifier>{27A0BFC1-1399-DE13-3CCB-C3982823BE1F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\mono\metadata">
+      <UniqueIdentifier>{E1266DDD-4D93-28D8-1687-C03582B24A40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\mono\utils">
+      <UniqueIdentifier>{313BF530-1D1F-B686-867F-B0D97282A008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\mono\jit\jit.h">
+      <Filter>include\mono\jit</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\jit\mono-private-unstable.h">
+      <Filter>include\mono\jit</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\appdomain.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\assembly.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\attrdefs.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\blob.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\class.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\debug-helpers.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\debug-mono-symfile.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\environment.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\exception.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\image.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\loader.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\metadata.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\mono-config.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\mono-debug.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\mono-gc.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\mono-private-unstable.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\object-forward.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\object.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\opcodes.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\profiler-events.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\profiler.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\reflection.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\row-indexes.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\sgen-bridge.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\threads.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\tokentype.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\metadata\verify.h">
+      <Filter>include\mono\metadata</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\utils\mono-counters.h">
+      <Filter>include\mono\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\utils\mono-dl-fallback.h">
+      <Filter>include\mono\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\utils\mono-error.h">
+      <Filter>include\mono\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\utils\mono-forward.h">
+      <Filter>include\mono\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\utils\mono-jemalloc.h">
+      <Filter>include\mono\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\utils\mono-logger.h">
+      <Filter>include\mono\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\utils\mono-private-unstable.h">
+      <Filter>include\mono\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mono\utils\mono-publib.h">
+      <Filter>include\mono\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MonoApiTest.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MonoApiTest.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

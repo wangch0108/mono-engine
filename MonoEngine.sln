@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MonoEngineCore", "MonoEngineCore\MonoEngineCore.vcxproj", "{BD2704F2-A9F5-F7F7-9289-681E7EF6D35C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MonoApiTest", "MonoApiTest\MonoApiTest.vcxproj", "{D8224CDF-44D8-C4D4-CDCC-BEAB3981BBD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoScript", "MonoScript\MonoScript.csproj", "{D34C769C-BF04-B8E9-280C-914514E352DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD2704F2-A9F5-F7F7-9289-681E7EF6D35C}.Debug|x64.ActiveCfg = Debug|x64
+		{BD2704F2-A9F5-F7F7-9289-681E7EF6D35C}.Debug|x64.Build.0 = Debug|x64
+		{BD2704F2-A9F5-F7F7-9289-681E7EF6D35C}.Release|x64.ActiveCfg = Release|x64
+		{BD2704F2-A9F5-F7F7-9289-681E7EF6D35C}.Release|x64.Build.0 = Release|x64
+		{D8224CDF-44D8-C4D4-CDCC-BEAB3981BBD8}.Debug|x64.ActiveCfg = Debug|x64
+		{D8224CDF-44D8-C4D4-CDCC-BEAB3981BBD8}.Debug|x64.Build.0 = Debug|x64
+		{D8224CDF-44D8-C4D4-CDCC-BEAB3981BBD8}.Release|x64.ActiveCfg = Release|x64
+		{D8224CDF-44D8-C4D4-CDCC-BEAB3981BBD8}.Release|x64.Build.0 = Release|x64
+		{D34C769C-BF04-B8E9-280C-914514E352DA}.Debug|x64.ActiveCfg = Debug|x64
+		{D34C769C-BF04-B8E9-280C-914514E352DA}.Debug|x64.Build.0 = Debug|x64
+		{D34C769C-BF04-B8E9-280C-914514E352DA}.Release|x64.ActiveCfg = Release|x64
+		{D34C769C-BF04-B8E9-280C-914514E352DA}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
