@@ -1,6 +1,6 @@
 #include "mepch.h"
 #include "LoadDylib.h"
-#include "WinUnicode.h"
+#include "PlatformDependent/Win/WinUnicode.h"
 
 typedef std::map<std::string, void*> LibraryMap;
 static LibraryMap GLoaded;

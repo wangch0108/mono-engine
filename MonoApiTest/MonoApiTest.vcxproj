@@ -103,8 +103,8 @@
     <ClCompile Include="src\MonoApiTest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MonoScript\MonoScript.csproj">
-      <Project>{D34C769C-BF04-B8E9-280C-914514E352DA}</Project>
+    <ProjectReference Include="..\MonoScriptTest\MonoScriptTest.csproj">
+      <Project>{134BD655-FF18-CA5B-E8AC-3A82D419A6C0}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

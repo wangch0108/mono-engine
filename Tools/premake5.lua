@@ -41,7 +41,8 @@ project "MonoEngineCore"
 
     links
     {
-        "MonoScript"
+        "MonoEngine",
+        "Assembly-CSharp"
     }
 
     postbuildcommands
@@ -57,14 +58,64 @@ project "MonoEngineCore"
         optimize "Full"
         symbols "Default"
 
+set_work_directory("../MonoEngine")
+project "MonoEngine"	
+    kind "SharedLib"
+    language "C#"
+    dotnetframework "4.8.1"
+
+    targetdir ("../MonoEngineCore/Data/Managed")
+    objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}/")
+
+    files
+    {
+        "**.cs"
+    }
+
+    filter "configurations:Debug"
+    optimize "Off"
+    symbols "On"
+
+    filter "configurations:Release"
+    optimize "On"
+    symbols "Default"
+
+set_work_directory("../Assembly-CSharp")
+project "Assembly-CSharp"	
+    kind "SharedLib"
+    language "C#"
+    dotnetframework "4.8.1"
+
+    targetdir ("../MonoEngineCore/Data/Managed")
+    objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}/")
+
+    files
+    {
+        "**.cs"
+    }
+
+    links
+    {
+        "MonoEngine"
+    }
+
+    filter "configurations:Debug"
+    optimize "Off"
+    symbols "On"
+
+    filter "configurations:Release"
+    optimize "On"
+    symbols "Default"
+
+group "Test"
 set_work_directory("../MonoApiTest")
 project "MonoApiTest"
-	kind "ConsoleApp"
-	language "C++"
-	cppdialect "C++17"
+    kind "ConsoleApp"
+    language "C++"
+    cppdialect "C++17"
 
     targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}/")
-	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}/")
+    objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}/")
 
     files
     {
@@ -72,7 +123,7 @@ project "MonoApiTest"
         "src/**.cpp",
     }
 
-	includedirs
+    includedirs
     {
         "src",
         "include"
@@ -80,8 +131,8 @@ project "MonoApiTest"
 
     links
     {
-        "MonoScript",
-        "lib/mono-2.0-sgen.lib"
+        "lib/mono-2.0-sgen.lib",
+        "MonoScriptTest"
     }
 
     postbuildcommands
@@ -97,8 +148,8 @@ project "MonoApiTest"
         optimize "Full"
         symbols "Default"
 
-set_work_directory("../MonoScript")
-project "MonoScript"	
+set_work_directory("../MonoScriptTest")
+project "MonoScriptTest"	
     kind "SharedLib"
 	language "C#"
 	dotnetframework "4.8.1"
@@ -118,3 +169,4 @@ project "MonoScript"
     filter "configurations:Release"
         optimize "On"
         symbols "Default"
+group ""

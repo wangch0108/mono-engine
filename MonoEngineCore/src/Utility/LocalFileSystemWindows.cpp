@@ -1,6 +1,6 @@
 #include "mepch.h"
 #include "LocalFileSystemWindows.h"
-#include "WinUnicode.h"
+#include "PlatformDependent/Win/WinUnicode.h"
 #include "PathNameUtility.h"
 
 std::string LocalFileSystemWindows::GetApplicationPath() const

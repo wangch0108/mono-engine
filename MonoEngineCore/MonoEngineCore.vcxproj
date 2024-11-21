@@ -98,36 +98,58 @@
   <ItemGroup>
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\EditorMonoLoader.h" />
-    <ClInclude Include="src\LoadDylib.h" />
-    <ClInclude Include="src\LocalFileSystemWindows.h" />
-    <ClInclude Include="src\MonoFunctions.h" />
-    <ClInclude Include="src\MonoIncludes.h" />
-    <ClInclude Include="src\MonoLoader.h" />
-    <ClInclude Include="src\MonoManager.h" />
-    <ClInclude Include="src\MonoTypes.h" />
-    <ClInclude Include="src\PathNameUtility.h" />
+    <ClInclude Include="src\Export\GameObject.bindings.h" />
+    <ClInclude Include="src\Export\MonoExport.h" />
+    <ClInclude Include="src\Mono\MonoApi.h" />
+    <ClInclude Include="src\Mono\MonoArguments.h" />
+    <ClInclude Include="src\Mono\MonoBehaviour.h" />
+    <ClInclude Include="src\Mono\MonoFunctions.h" />
+    <ClInclude Include="src\Mono\MonoIncludes.h" />
+    <ClInclude Include="src\Mono\MonoInvocation.h" />
+    <ClInclude Include="src\Mono\MonoLoader.h" />
+    <ClInclude Include="src\Mono\MonoManager.h" />
+    <ClInclude Include="src\Mono\MonoScriptCache.h" />
+    <ClInclude Include="src\Mono\MonoTypes.h" />
+    <ClInclude Include="src\Mono\MonoUtility.h" />
+    <ClInclude Include="src\PlatformDependent\Win\WinUnicode.h" />
     <ClInclude Include="src\PlatformDetection.h" />
-    <ClInclude Include="src\VirtualFileSystem.h" />
-    <ClInclude Include="src\WinUnicode.h" />
+    <ClInclude Include="src\Scripting\GameObject.h" />
+    <ClInclude Include="src\Thread\AtomicOps.h" />
+    <ClInclude Include="src\Thread\AtomicRefCounter.h" />
+    <ClInclude Include="src\Utility\LoadDylib.h" />
+    <ClInclude Include="src\Utility\LocalFileSystemWindows.h" />
+    <ClInclude Include="src\Utility\PathNameUtility.h" />
+    <ClInclude Include="src\Utility\VirtualFileSystem.h" />
     <ClInclude Include="src\mepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\EditorMonoLoader.cpp" />
-    <ClCompile Include="src\LoadDylib.cpp" />
-    <ClCompile Include="src\LocalFileSystemWindows.cpp" />
+    <ClCompile Include="src\Export\GameObject.bindings.cpp" />
+    <ClCompile Include="src\Export\MonoExport.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\MonoLoader.cpp" />
-    <ClCompile Include="src\MonoManager.cpp" />
-    <ClCompile Include="src\PathNameUtility.cpp" />
-    <ClCompile Include="src\VirtualFileSystem.cpp" />
+    <ClCompile Include="src\Mono\MonoApi.cpp" />
+    <ClCompile Include="src\Mono\MonoArguments.cpp" />
+    <ClCompile Include="src\Mono\MonoBehaviour.cpp" />
+    <ClCompile Include="src\Mono\MonoInvocation.cpp" />
+    <ClCompile Include="src\Mono\MonoLoader.cpp" />
+    <ClCompile Include="src\Mono\MonoManager.cpp" />
+    <ClCompile Include="src\Mono\MonoScriptCache.cpp" />
+    <ClCompile Include="src\Mono\MonoTypes.cpp" />
+    <ClCompile Include="src\Utility\LoadDylib.cpp" />
+    <ClCompile Include="src\Utility\LocalFileSystemWindows.cpp" />
+    <ClCompile Include="src\Utility\PathNameUtility.cpp" />
+    <ClCompile Include="src\Utility\VirtualFileSystem.cpp" />
     <ClCompile Include="src\mepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MonoScript\MonoScript.csproj">
-      <Project>{D34C769C-BF04-B8E9-280C-914514E352DA}</Project>
+    <ProjectReference Include="..\MonoEngine\MonoEngine.csproj">
+      <Project>{14198F7C-00D1-D0C9-69D8-A92555AF6BBA}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Assembly-CSharp\Assembly-CSharp.csproj">
+      <Project>{130B58F2-7F96-C5B6-88A7-48ABF4B121B7}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -73,3 +73,17 @@ std::string DeleteLastPathNameComponent(const std::string& pathName)
 	char separators[] = { kPathNameSeparator, '\0' };
 	return DeleteLastPathNameComponentImpl(pathName, separators);
 }
+
+void ConvertSeparatorsToPlatform(std::string& pathName)
+{
+	if (kPlatformPathNameSeparator == kPathNameSeparator)
+		return;
+
+	auto it = pathName.begin(), itEnd = pathName.end();
+	while (it != itEnd)
+	{
+		if (*it == kPathNameSeparator)
+			*it = kPlatformPathNameSeparator;
+		++it;
+	}
+}

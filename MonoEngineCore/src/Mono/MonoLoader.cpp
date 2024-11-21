@@ -1,12 +1,12 @@
 #include "mepch.h"
 #include "MonoLoader.h"
-#include "LoadDylib.h"
 #include "MonoManager.h"
+#include "Utility/LoadDylib.h"
 
 #define DO_API(r, n, p) typedef r (*fp##n##Type) p;
 #include "MonoFunctions.h"
 
-#define DO_API(r,n,p) fp##n##Type n = nullptr;
+#define DO_API(r, n, p) fp##n##Type n = nullptr;
 #include "MonoFunctions.h"
 
 static std::string GMonoModulePath;

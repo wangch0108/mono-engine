@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MonoEngineCore", "MonoEngineCore\MonoEngineCore.vcxproj", "{BD2704F2-A9F5-F7F7-9289-681E7EF6D35C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp\Assembly-CSharp.csproj", "{130B58F2-7F96-C5B6-88A7-48ABF4B121B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoEngine", "MonoEngine\MonoEngine.csproj", "{14198F7C-00D1-D0C9-69D8-A92555AF6BBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{2CC8CC5D-1880-0EAB-8187-E7066D5EA99B}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MonoApiTest", "MonoApiTest\MonoApiTest.vcxproj", "{D8224CDF-44D8-C4D4-CDCC-BEAB3981BBD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoScript", "MonoScript\MonoScript.csproj", "{D34C769C-BF04-B8E9-280C-914514E352DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoScriptTest", "MonoScriptTest\MonoScriptTest.csproj", "{134BD655-FF18-CA5B-E8AC-3A82D419A6C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,16 +23,28 @@ Global
 		{BD2704F2-A9F5-F7F7-9289-681E7EF6D35C}.Debug|x64.Build.0 = Debug|x64
 		{BD2704F2-A9F5-F7F7-9289-681E7EF6D35C}.Release|x64.ActiveCfg = Release|x64
 		{BD2704F2-A9F5-F7F7-9289-681E7EF6D35C}.Release|x64.Build.0 = Release|x64
+		{130B58F2-7F96-C5B6-88A7-48ABF4B121B7}.Debug|x64.ActiveCfg = Debug|x64
+		{130B58F2-7F96-C5B6-88A7-48ABF4B121B7}.Debug|x64.Build.0 = Debug|x64
+		{130B58F2-7F96-C5B6-88A7-48ABF4B121B7}.Release|x64.ActiveCfg = Release|x64
+		{130B58F2-7F96-C5B6-88A7-48ABF4B121B7}.Release|x64.Build.0 = Release|x64
+		{14198F7C-00D1-D0C9-69D8-A92555AF6BBA}.Debug|x64.ActiveCfg = Debug|x64
+		{14198F7C-00D1-D0C9-69D8-A92555AF6BBA}.Debug|x64.Build.0 = Debug|x64
+		{14198F7C-00D1-D0C9-69D8-A92555AF6BBA}.Release|x64.ActiveCfg = Release|x64
+		{14198F7C-00D1-D0C9-69D8-A92555AF6BBA}.Release|x64.Build.0 = Release|x64
 		{D8224CDF-44D8-C4D4-CDCC-BEAB3981BBD8}.Debug|x64.ActiveCfg = Debug|x64
 		{D8224CDF-44D8-C4D4-CDCC-BEAB3981BBD8}.Debug|x64.Build.0 = Debug|x64
 		{D8224CDF-44D8-C4D4-CDCC-BEAB3981BBD8}.Release|x64.ActiveCfg = Release|x64
 		{D8224CDF-44D8-C4D4-CDCC-BEAB3981BBD8}.Release|x64.Build.0 = Release|x64
-		{D34C769C-BF04-B8E9-280C-914514E352DA}.Debug|x64.ActiveCfg = Debug|x64
-		{D34C769C-BF04-B8E9-280C-914514E352DA}.Debug|x64.Build.0 = Debug|x64
-		{D34C769C-BF04-B8E9-280C-914514E352DA}.Release|x64.ActiveCfg = Release|x64
-		{D34C769C-BF04-B8E9-280C-914514E352DA}.Release|x64.Build.0 = Release|x64
+		{134BD655-FF18-CA5B-E8AC-3A82D419A6C0}.Debug|x64.ActiveCfg = Debug|x64
+		{134BD655-FF18-CA5B-E8AC-3A82D419A6C0}.Debug|x64.Build.0 = Debug|x64
+		{134BD655-FF18-CA5B-E8AC-3A82D419A6C0}.Release|x64.ActiveCfg = Release|x64
+		{134BD655-FF18-CA5B-E8AC-3A82D419A6C0}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D8224CDF-44D8-C4D4-CDCC-BEAB3981BBD8} = {2CC8CC5D-1880-0EAB-8187-E7066D5EA99B}
+		{134BD655-FF18-CA5B-E8AC-3A82D419A6C0} = {2CC8CC5D-1880-0EAB-8187-E7066D5EA99B}
 	EndGlobalSection
 EndGlobal

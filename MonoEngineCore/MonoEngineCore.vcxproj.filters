@@ -1,84 +1,133 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Export">
+      <UniqueIdentifier>{67C68DB1-5368-B887-3C23-CCDB28643FD8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Mono">
+      <UniqueIdentifier>{7E2F897C-6A66-8A0D-1353-7010FF68060F}</UniqueIdentifier>
     </Filter>
-    <Filter Include="资源文件">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="PlatformDependent">
+      <UniqueIdentifier>{012D2EF6-6D43-2C8C-B6BA-B7AD2210FD13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlatformDependent\Win">
+      <UniqueIdentifier>{5E0BAA8B-CA77-6586-936B-FDE3FF9687EE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripting">
+      <UniqueIdentifier>{985A7358-04C5-27CF-4D03-D974B9AC0524}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{BD8B6AD3-A92D-95A9-92E8-A8FD7E291CFA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{594615A9-C525-9444-CE3D-1F1B3A9CFAA5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MonoLoader.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Application.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\LocalFileSystemWindows.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\VirtualFileSystem.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\EditorMonoLoader.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\PathNameUtility.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\LoadDylib.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\mepch.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
+    <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\EditorMonoLoader.h" />
+    <ClInclude Include="src\Export\GameObject.bindings.h">
+      <Filter>Export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Export\MonoExport.h">
+      <Filter>Export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mono\MonoApi.h">
+      <Filter>Mono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mono\MonoBehaviour.h">
+      <Filter>Mono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mono\MonoFunctions.h">
+      <Filter>Mono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mono\MonoIncludes.h">
+      <Filter>Mono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mono\MonoLoader.h">
+      <Filter>Mono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mono\MonoManager.h">
+      <Filter>Mono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mono\MonoScriptCache.h">
+      <Filter>Mono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mono\MonoTypes.h">
+      <Filter>Mono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlatformDependent\Win\WinUnicode.h">
+      <Filter>PlatformDependent\Win</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlatformDetection.h" />
+    <ClInclude Include="src\Scripting\GameObject.h">
+      <Filter>Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Thread\AtomicOps.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Thread\AtomicRefCounter.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\LoadDylib.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\LocalFileSystemWindows.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\PathNameUtility.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\VirtualFileSystem.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mepch.h" />
+    <ClInclude Include="src\Mono\MonoInvocation.h" />
+    <ClInclude Include="src\Mono\MonoArguments.h" />
+    <ClInclude Include="src\Mono\MonoUtility.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\MonoLoader.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Application.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\VirtualFileSystem.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\LocalFileSystemWindows.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\WinUnicode.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\EditorMonoLoader.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\PathNameUtility.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\LoadDylib.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\PlatformDetection.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\mepch.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\MonoFunctions.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\MonoTypes.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
+    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\EditorMonoLoader.cpp" />
+    <ClCompile Include="src\Export\GameObject.bindings.cpp">
+      <Filter>Export</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Export\MonoExport.cpp">
+      <Filter>Export</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Mono\MonoApi.cpp">
+      <Filter>Mono</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mono\MonoBehaviour.cpp">
+      <Filter>Mono</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mono\MonoLoader.cpp">
+      <Filter>Mono</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mono\MonoManager.cpp">
+      <Filter>Mono</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mono\MonoScriptCache.cpp">
+      <Filter>Mono</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mono\MonoTypes.cpp">
+      <Filter>Mono</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\LoadDylib.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\LocalFileSystemWindows.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\PathNameUtility.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\VirtualFileSystem.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mepch.cpp" />
+    <ClCompile Include="src\Mono\MonoArguments.cpp" />
+    <ClCompile Include="src\Mono\MonoInvocation.cpp" />
   </ItemGroup>
 </Project>

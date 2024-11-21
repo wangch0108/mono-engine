@@ -1,5 +1,4 @@
 #pragma once
-
 #include "PlatformDetection.h"
 
 #include <string>
