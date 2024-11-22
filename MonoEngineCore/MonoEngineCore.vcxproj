@@ -100,6 +100,7 @@
     <ClInclude Include="src\EditorMonoLoader.h" />
     <ClInclude Include="src\Export\GameObject.bindings.h" />
     <ClInclude Include="src\Export\MonoExport.h" />
+    <ClInclude Include="src\Export\Object.bindings.h" />
     <ClInclude Include="src\Mono\MonoApi.h" />
     <ClInclude Include="src\Mono\MonoArguments.h" />
     <ClInclude Include="src\Mono\MonoBehaviour.h" />
@@ -108,12 +109,16 @@
     <ClInclude Include="src\Mono\MonoInvocation.h" />
     <ClInclude Include="src\Mono\MonoLoader.h" />
     <ClInclude Include="src\Mono\MonoManager.h" />
+    <ClInclude Include="src\Mono\MonoObjectOfType.h" />
     <ClInclude Include="src\Mono\MonoScriptCache.h" />
     <ClInclude Include="src\Mono\MonoTypes.h" />
     <ClInclude Include="src\Mono\MonoUtility.h" />
     <ClInclude Include="src\PlatformDependent\Win\WinUnicode.h" />
     <ClInclude Include="src\PlatformDetection.h" />
     <ClInclude Include="src\Scripting\GameObject.h" />
+    <ClInclude Include="src\Scripting\GameObjectManager.h" />
+    <ClInclude Include="src\Scripting\BaseObject.h" />
+    <ClInclude Include="src\Scripting\Scripting.h" />
     <ClInclude Include="src\Thread\AtomicOps.h" />
     <ClInclude Include="src\Thread\AtomicRefCounter.h" />
     <ClInclude Include="src\Utility\LoadDylib.h" />
@@ -127,6 +132,7 @@
     <ClCompile Include="src\EditorMonoLoader.cpp" />
     <ClCompile Include="src\Export\GameObject.bindings.cpp" />
     <ClCompile Include="src\Export\MonoExport.cpp" />
+    <ClCompile Include="src\Export\Object.bindings.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Mono\MonoApi.cpp" />
     <ClCompile Include="src\Mono\MonoArguments.cpp" />
@@ -136,6 +142,10 @@
     <ClCompile Include="src\Mono\MonoManager.cpp" />
     <ClCompile Include="src\Mono\MonoScriptCache.cpp" />
     <ClCompile Include="src\Mono\MonoTypes.cpp" />
+    <ClCompile Include="src\Scripting\BaseObject.cpp" />
+    <ClCompile Include="src\Scripting\GameObject.cpp" />
+    <ClCompile Include="src\Scripting\GameObjectManager.cpp" />
+    <ClCompile Include="src\Scripting\Scripting.cpp" />
     <ClCompile Include="src\Utility\LoadDylib.cpp" />
     <ClCompile Include="src\Utility\LocalFileSystemWindows.cpp" />
     <ClCompile Include="src\Utility\PathNameUtility.cpp" />
@@ -151,6 +161,9 @@
     <ProjectReference Include="..\Assembly-CSharp\Assembly-CSharp.csproj">
       <Project>{130B58F2-7F96-C5B6-88A7-48ABF4B121B7}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

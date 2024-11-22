@@ -7,3 +7,10 @@ inline T& ExtractMonoObjectData(MonoObjectPtr object)
 	auto pointer = (char*)object.GetNativePtr();
 	return *reinterpret_cast<T*>(pointer + (size_t)MONO_OBJECT_HEADSIZE); // Unbox
 }
+
+template<class T>
+inline T* ExtractMonoObjectPointer(MonoObjectPtr object)
+{
+	auto pointer = (char*)object.GetNativePtr();
+	return reinterpret_cast<T*>(pointer + (size_t)MONO_OBJECT_HEADSIZE);;
+}

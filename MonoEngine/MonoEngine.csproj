@@ -21,7 +21,8 @@
     <OutputPath>..\MonoEngineCore\Data\Managed\</OutputPath>
     <BaseIntermediateOutputPath>..\bin-int\Debug-windows-x86_64\MonoEngine\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -33,7 +34,8 @@
     <OutputPath>..\MonoEngineCore\Data\Managed\</OutputPath>
     <BaseIntermediateOutputPath>..\bin-int\Release-windows-x86_64\MonoEngine\</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -43,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\GameObject.binding.cs" />
+    <Compile Include="src\Object.binding.cs" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

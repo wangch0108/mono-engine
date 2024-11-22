@@ -1,13 +1,19 @@
 #pragma once
+#include "BaseObject.h"
 #include "Mono/MonoBehaviour.h"
+#include "Mono/MonoTypes.h"
 
-class GameObject
+class GameObject : public Object
 {
 public:
-	std::string Name;
-
+	GameObject(const std::string& name);
+	~GameObject();
+	void Activate();
 	void AddComponent(const std::string& compName);
-	static GameObject* Find(const std::string& name);
+
+	operator bool() const { return _monoHandle.HasTarget(); }
 private:
+	void AwakeFromLoad();
+
 	std::vector<MonoBehaviour> _components;
 };

@@ -34,6 +34,7 @@ DO_API(MonoClass*, mono_class_from_name, (MonoImage* image, const char* name_spa
 /* Object */
 DO_API(MonoString*, mono_string_new_wrapper, (const char* text))
 DO_API(MonoString*, mono_object_to_string, (MonoObject* obj, MonoObject** exc))
+DO_API(char*, mono_string_to_utf8, (MonoString* string_obj))
 
 /* Method */
 DO_API(MonoMethod*, mono_class_get_methods, (MonoClass* klass, void** iter))
@@ -63,6 +64,10 @@ DO_API(const char*, mono_metadata_string_heap, (MonoImage* meta, uint32_t table_
 
 DO_API(void, mono_gc_collect, (int generation))
 DO_API(int, mono_gc_max_generation, (void))
+DO_API(uint32_t, mono_gchandle_new, (MonoObject* obj, mono_bool pinned))
+DO_API(void, mono_gchandle_free, (uint32_t gchandle))
+DO_API(MonoObject*, mono_gchandle_get_target, (uint32_t gchandle))
+DO_API(uint32_t, mono_gchandle_new_weakref, (MonoObject* obj, mono_bool track_resurrection))
 
 DO_API(void, mono_set_signal_chaining, (int chain_signals))
 DO_API(int, mono_parse_default_optimizations, (const char* p))

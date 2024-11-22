@@ -1,0 +1,7 @@
+// 提示文件帮助 Visual Studio IDE 解释 Visual C++ 标识符,
+// 如函数和宏的名称。
+// 有关详细信息，请参见 https://go.microsoft.com/fwlink/?linkid=865984
+#define DO_API(r, n, p) extern r (*n) p;
+#define DO_API(r, n, p) typedef r (*fp##n##Type) p;
+#define DO_API(r, n, p)
+#define DO_API(r, n, p) n = (fp##n##Type) LookupSymbol(GMonoModule, #n); if ( !n ) { funcsOK = false; std::cerr << "mono: function " #n " not found\n"; }

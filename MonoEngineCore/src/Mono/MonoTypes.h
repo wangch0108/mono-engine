@@ -189,3 +189,47 @@ public:
 private:
 	MonoString* _nativePtr;
 };
+
+#define INVALID_GC_HANDLE ((uint32_t)-1)
+enum MonoGCHandleWeakness
+{
+	GCHANDLE_INVALID,
+	GCHANDLE_WEAK,
+	GCHANDLE_STRONG,
+};
+
+class MonoGCHandle
+{
+public:
+	MonoGCHandle() { Acquire(MONO_NULL, GCHANDLE_INVALID); }
+	MonoGCHandle(MonoObjectPtr obj, MonoGCHandleWeakness weakness) { Acquire(obj, weakness); }
+
+	bool operator==(const MonoGCHandle& other) const { return _handle == other._handle; }
+	bool operator!=(const MonoGCHandle& other) const { return _handle != other._handle; }
+
+	__forceinline bool HasTarget() const;
+	__forceinline MonoObjectPtr Resolve() const;
+
+	void Release();
+	void AcquireWeak(MonoObjectPtr obj);
+	void AcquireStrong(MonoObjectPtr obj);
+
+private:
+	uint32_t _handle;
+	MonoGCHandleWeakness _weakness;
+
+	void Acquire(MonoObjectPtr obj, MonoGCHandleWeakness weakness);
+	static MonoObjectPtr ResolveGCHandle(uint32_t handle);
+};
+
+__forceinline bool MonoGCHandle::HasTarget() const
+{
+	return _handle != INVALID_GC_HANDLE;
+}
+
+__forceinline MonoObjectPtr MonoGCHandle::Resolve() const
+{
+	if (!HasTarget())
+		return MONO_NULL;
+	return ResolveGCHandle(_handle);
+}

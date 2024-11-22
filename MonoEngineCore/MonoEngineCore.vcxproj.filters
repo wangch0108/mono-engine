@@ -85,6 +85,11 @@
     <ClInclude Include="src\Mono\MonoInvocation.h" />
     <ClInclude Include="src\Mono\MonoArguments.h" />
     <ClInclude Include="src\Mono\MonoUtility.h" />
+    <ClInclude Include="src\Scripting\GameObjectManager.h" />
+    <ClInclude Include="src\Scripting\BaseObject.h" />
+    <ClInclude Include="src\Export\Object.bindings.h" />
+    <ClInclude Include="src\Mono\MonoObjectOfType.h" />
+    <ClInclude Include="src\Scripting\Scripting.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
@@ -129,5 +134,13 @@
     <ClCompile Include="src\mepch.cpp" />
     <ClCompile Include="src\Mono\MonoArguments.cpp" />
     <ClCompile Include="src\Mono\MonoInvocation.cpp" />
+    <ClCompile Include="src\Scripting\GameObject.cpp" />
+    <ClCompile Include="src\Scripting\GameObjectManager.cpp" />
+    <ClCompile Include="src\Scripting\BaseObject.cpp" />
+    <ClCompile Include="src\Export\Object.bindings.cpp" />
+    <ClCompile Include="src\Scripting\Scripting.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
