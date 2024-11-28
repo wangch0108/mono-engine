@@ -7,6 +7,7 @@ struct MonoClass;
 struct MonoObject;
 struct MonoMethodSignature;
 struct MonoException;
+struct MonoType;
 
 #if USE_MONO_METADATA
 struct MonoTableInfo;

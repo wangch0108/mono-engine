@@ -4,17 +4,18 @@
 class Object
 {
 public:
-	Object(const std::string& name) : _name(name) {}
-	const char* GetName() const { return _name.c_str(); }
-	void SetName(const std::string& name) { _name = name; }
+	Object() = default;
+
+	virtual const char* GetName() const { return ""; }
+	virtual void SetName(const char*) {}
+
 	friend void delete_object_internal(Object* o);
 
-	MonoObjectPtr GetCachedMonoObject();
+	MonoObjectPtr GetCachedMonoObject() const;
 	void SetCachedMonoObject(MonoObjectPtr object);
 protected:
 
 	virtual ~Object();
-	std::string _name;
 	MonoGCHandle _monoHandle;
 };
 

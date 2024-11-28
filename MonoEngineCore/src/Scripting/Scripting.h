@@ -21,4 +21,5 @@ namespace Scripting
 
 	void SetCachedPtrOnScriptingWrapper(MonoObjectPtr wrapper, Object* cachedPtr);
 	MonoObjectPtr ConnectMonoWrapperToObject(MonoObjectPtr object, Object* ptr);
+	MonoObjectPtr MonoWrapperFor(Object* o);
 }

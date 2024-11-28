@@ -97,6 +97,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\CoreMacros.h" />
     <ClInclude Include="src\EditorMonoLoader.h" />
     <ClInclude Include="src\Export\GameObject.bindings.h" />
     <ClInclude Include="src\Export\MonoExport.h" />
@@ -118,6 +119,7 @@
     <ClInclude Include="src\Scripting\GameObject.h" />
     <ClInclude Include="src\Scripting\GameObjectManager.h" />
     <ClInclude Include="src\Scripting\BaseObject.h" />
+    <ClInclude Include="src\Scripting\GameObjectUtility.h" />
     <ClInclude Include="src\Scripting\Scripting.h" />
     <ClInclude Include="src\Thread\AtomicOps.h" />
     <ClInclude Include="src\Thread\AtomicRefCounter.h" />
@@ -145,6 +147,7 @@
     <ClCompile Include="src\Scripting\BaseObject.cpp" />
     <ClCompile Include="src\Scripting\GameObject.cpp" />
     <ClCompile Include="src\Scripting\GameObjectManager.cpp" />
+    <ClCompile Include="src\Scripting\GameObjectUtility.cpp" />
     <ClCompile Include="src\Scripting\Scripting.cpp" />
     <ClCompile Include="src\Utility\LoadDylib.cpp" />
     <ClCompile Include="src\Utility\LocalFileSystemWindows.cpp" />

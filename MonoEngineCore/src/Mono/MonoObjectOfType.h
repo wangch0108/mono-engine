@@ -32,6 +32,14 @@ struct MonoObjectOfType
 		return nullptr;
 	}
 
+	inline Object* GetCachedPtr()
+	{
+		if (_object == MONO_NULL)
+			return nullptr;
+
+		return Scripting::GetCachedPtrFromScriptingWrapper(_object);
+	}
+
 	inline void SetCachedPtr(Object* cachedPtr)
 	{
 		Scripting::SetCachedPtrOnScriptingWrapper(_object, cachedPtr);

@@ -3,6 +3,8 @@
 
 #include <cassert>
 
+#include "Scripting/Scripting.h"
+
 MonoMethodPtr mono_produce_method_from_backend(MonoMethod* method)
 {
 	if (method == nullptr)
@@ -46,4 +48,13 @@ MonoClass* mono_class_from_name_ex(MonoImage* image, const char* name_space, con
 	// Namespace cannot be NULL; doing so will cause an error in this version
 	name_space = name_space == nullptr ? "" : name_space;
 	return mono_class_from_name(image, name_space, name);
+}
+
+MonoObjectPtr mono_engine_object_new(MonoClassPtr klass, Object* nativeInstance)
+{
+	MonoObjectPtr managedInstance = mono_object_new(mono_domain_get(), klass);
+	if (managedInstance != MONO_NULL)
+		Scripting::ConnectMonoWrapperToObject(managedInstance, nativeInstance);
+
+	return managedInstance;
 }

@@ -16,9 +16,9 @@ void Application::Init()
 	 * 1. Call("CSharpInit"); // C Invoke C#
 	 * 2. var ob = GameObject.Find("xx"); // C# Invoke C
 	 * 3. ob.AddComponent("xx_comp"); // C# Invoke C
-	 *	2.1. Create MonoBehaviour, SetClass // C Logic
-	 *	2.2. AwakeFromLoad CallMethod(e.g. Awake/OnEnable/Start) // C Invoke C#
-	 *	2.3. Register behaviour to PlayerLoop // C Logic
+	 *	3.1. Create MonoBehaviour, SetClass // C Logic
+	 *	3.2. AwakeFromLoad CallMethod(e.g. Awake/OnEnable/Start) // C Invoke C#
+	 *	3.3. Register behaviour to PlayerLoop // C Logic
 	 * 4. Call Update/LateUpdate // C Invoke C#
 	 */
 

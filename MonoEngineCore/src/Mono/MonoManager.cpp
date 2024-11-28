@@ -143,6 +143,11 @@ MonoAssembly* MonoManager::GetScriptAssembly()
 	return _assemblies[kScriptAssembly];
 }
 
+MonoAssembly* MonoManager::GetEngineAssembly()
+{
+	return _assemblies[kEngineAssembly];
+}
+
 MonoImagePtr MonoManager::GetImage(const char* dllName)
 {
 	auto ass = GetAssembly(dllName);
@@ -152,6 +157,11 @@ MonoImagePtr MonoManager::GetImage(const char* dllName)
 MonoImagePtr MonoManager::GetScriptImage()
 {
 	return mono_assembly_get_image(GetScriptAssembly());
+}
+
+MonoImagePtr MonoManager::GetEngineImage()
+{
+	return mono_assembly_get_image(GetEngineAssembly());
 }
 
 MonoClassPtr MonoManager::GetMonoClass(const char* className, const char* theNameSpace)
@@ -194,12 +204,20 @@ MonoClassPtr MonoManager::GetMonoClassWithoutCorlib(const char* className, const
 
 MonoClassPtr MonoManager::GetScriptClass(const char* className, const char* theNameSpace)
 {
-	auto scriptAssembly = GetMonoManager().GetScriptAssembly();
-	auto scriptImage = mono_assembly_get_image(scriptAssembly);
-	if (!scriptImage)
+	auto image = GetScriptImage();
+	if (!image)
 		return nullptr;
 
-	return mono_class_from_name_ex(scriptImage, theNameSpace, className);
+	return mono_class_from_name_ex(image, theNameSpace, className);
+}
+
+MonoClassPtr MonoManager::GetEngineClass(const char* className, const char* theNameSpace)
+{
+	auto image = GetEngineImage();
+	if (!image)
+		return nullptr;
+
+	return mono_class_from_name_ex(image, theNameSpace, className);
 }
 
 void MonoManager::RegisterMonoScriptCache(MonoScriptCache* msc)
@@ -325,6 +343,7 @@ MonoDomain* MonoManager::CreateAndSetChildDomain()
 void MonoManager::FillCommonScriptingClasses()
 {
 	_commonScriptingClasses.mainClass = GetScriptClass("Main", nullptr);
+	_commonScriptingClasses.monoBehaviour = GetEngineClass("MonoBehaviour", "MonoEngine");
 }
 
 void MonoManager::DebugInitAssemblies()

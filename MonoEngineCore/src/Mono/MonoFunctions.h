@@ -30,11 +30,15 @@ DO_API(MonoImage*, mono_get_corlib, (void))
 DO_API(MonoClass*, mono_class_get_parent, (MonoClass* klass))
 DO_API(const char*, mono_class_get_name, (MonoClass* klass))
 DO_API(MonoClass*, mono_class_from_name, (MonoImage* image, const char* name_space, const char* name))
+DO_API(MonoClass*, mono_class_from_mono_type, (MonoType* type))
+DO_API(mono_bool, mono_class_is_subclass_of, (MonoClass* klass, MonoClass* klassc, mono_bool check_interfaces))
 
 /* Object */
 DO_API(MonoString*, mono_string_new_wrapper, (const char* text))
 DO_API(MonoString*, mono_object_to_string, (MonoObject* obj, MonoObject** exc))
 DO_API(char*, mono_string_to_utf8, (MonoString* string_obj))
+DO_API(MonoObject*, mono_object_new, (MonoDomain* domain, MonoClass* klass))
+DO_API(void, mono_runtime_object_init, (MonoObject* this_obj))
 
 /* Method */
 DO_API(MonoMethod*, mono_class_get_methods, (MonoClass* klass, void** iter))

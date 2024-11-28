@@ -2,7 +2,7 @@
 #include "BaseObject.h"
 #include "Mono/MonoObjectOfType.h"
 
-MonoObjectPtr Object::GetCachedMonoObject()
+MonoObjectPtr Object::GetCachedMonoObject() const
 {
 	return _monoHandle.Resolve();
 }

@@ -12,7 +12,7 @@ static MonoString* Object_GetPropName(MonoObject* object)
 static void Object_SetPropName(MonoObject* object, MonoString* name)
 {
 	MonoObjectOfType<Object> self(object);
-	const auto cppname = std::string(mono_string_to_utf8(name));
+	const auto cppname = mono_string_to_utf8(name);
 	self->SetName(cppname);
 }
 

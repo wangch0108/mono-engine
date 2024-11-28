@@ -6,7 +6,10 @@
 MonoDomain* s_RootDomain;
 MonoDomain* s_AppDomain;
 MonoAssembly* s_AppAssembly;
+
 namespace MonoApiTest {
+
+	void RegisterCFunction();
 
 	MonoDomain* InitMono()
 	{
@@ -21,9 +24,11 @@ namespace MonoApiTest {
 		mono_domain_set(appDomain, true);
 		s_AppDomain = appDomain;
 
-		auto assembly = LoadAssembly("assembly/MonoScript.dll");
+		auto assembly = LoadAssembly("assembly/MonoScriptTest.dll");
 		s_AppAssembly = assembly;
 		PrintAssemblyTypes(assembly);
+
+		RegisterCFunction();
 
 		auto obj = InstantiateClass("MonoScript", "ScriptTest");
 		TestCallMethod(obj);
@@ -120,14 +125,12 @@ namespace MonoApiTest {
 	void TestCallMethod(MonoObject* obj)
 	{
 		auto klass = mono_object_get_class(obj);
-		auto argumentLessMethod = mono_class_get_method_from_name(klass, "PrintMessage", 0);
-		if (argumentLessMethod)
+		if (auto argumentLessMethod = mono_class_get_method_from_name(klass, "PrintMessage", 0))
 		{
 			mono_runtime_invoke(argumentLessMethod, obj, nullptr, nullptr);
 		}
 
-		auto oneArgumentMethod = mono_class_get_method_from_name(klass, "PrintMessage", 1);
-		if (oneArgumentMethod)
+		if (auto oneArgumentMethod = mono_class_get_method_from_name(klass, "PrintMessage", 1))
 		{
 			int value = 5;
 			void* args = &value;
@@ -135,8 +138,7 @@ namespace MonoApiTest {
 			mono_runtime_invoke(oneArgumentMethod, obj, &args, nullptr);
 		}
 
-		auto staticMethod = mono_class_get_method_from_name(klass, "PrintMessage", 2);;
-		if (staticMethod)
+		if (auto staticMethod = mono_class_get_method_from_name(klass, "PrintMessage", 2))
 		{
 			void* args[2];
 			args[0] = mono_string_new(s_AppDomain, "The value");
@@ -166,10 +168,22 @@ namespace MonoApiTest {
 		auto nameValue = mono_string_new(s_AppDomain, nameStr.c_str());
 		mono_property_set_value(nameProperty, obj, (void**)&nameValue, nullptr);
 
-		auto argumentLessMethod = mono_class_get_method_from_name(klass, "PrintMessage", 0);
-		if (argumentLessMethod)
+		if (auto argumentLessMethod = mono_class_get_method_from_name(klass, "PrintMessage", 0))
 		{
 			mono_runtime_invoke(argumentLessMethod, obj, nullptr, nullptr);
 		}
+	}
+
+	static void CFunction(MonoObject* obj)
+	{
+		auto typePtr = (char*)obj + sizeof(void*) * 2;
+		auto typeInstnace = *reinterpret_cast<MonoType**>(typePtr);
+		auto klass = mono_class_from_mono_type(typeInstnace);
+		std::cout << "Type: " << mono_class_get_name(klass) << '\n';
+	}
+
+	void RegisterCFunction()
+	{
+		mono_add_internal_call("MonoScript.ScriptTest::CFunction", (const void*) &CFunction);
 	}
 }

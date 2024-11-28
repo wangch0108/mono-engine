@@ -20,6 +20,8 @@ struct MonoScriptCache
 	void Release() const;
 	void Retain() const;
 	int RefCount() const;
+
+	MonoMethodPtr GetCachedMethod(int index);
 };
 
 MonoScriptCache* CreateMonoScriptCache(MonoClassPtr klass);

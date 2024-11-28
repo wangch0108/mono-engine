@@ -1,8 +1,10 @@
 #include "mepch.h"
 #include "GameObject.bindings.h"
 #include "Mono/MonoIncludes.h"
+#include "Mono/MonoObjectOfType.h"
 #include "Scripting/GameObject.h"
 #include "Scripting/GameObjectManager.h"
+#include "Scripting/GameObjectUtility.h"
 #include "Scripting/Scripting.h"
 
 static void GameObject_Internal_CreateGameObject(MonoObject* self, MonoString* name)
@@ -23,10 +25,17 @@ static MonoObject* GameObject_Find(MonoString* str)
 	return object->GetCachedMonoObject().GetNativePtr();
 }
 
+static MonoObject* GameObject_Internal_AddComponentWithType(MonoObject* self_, MonoObject* componentType_)
+{
+	MonoObjectOfType<GameObject> self(self_);
+	return MonoAddComponentWithType(*self, componentType_);
+}
+
 static const char* s_GameObject_IcallNames[] =
 {
 	"MonoEngine.GameObject::Internal_CreateGameObject",
 	"MonoEngine.GameObject::Find",
+	"MonoEngine.GameObject::Internal_AddComponentWithType",
 	nullptr
 };
 
@@ -34,6 +43,7 @@ static const void* s_GameObject_IcallFuncs[] =
 {
 	(const void*)&GameObject_Internal_CreateGameObject,
 	(const void*)&GameObject_Find,
+	(const void*)& GameObject_Internal_AddComponentWithType,
 	nullptr,
 };
 

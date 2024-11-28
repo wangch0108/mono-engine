@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Main.cs" />
+    <Compile Include="src\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MonoEngine\MonoEngine.csproj">

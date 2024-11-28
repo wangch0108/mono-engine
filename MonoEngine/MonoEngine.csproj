@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\GameObject.binding.cs" />
+    <Compile Include="src\MonoBehaviour.binding.cs" />
     <Compile Include="src\Object.binding.cs" />
   </ItemGroup>
   <ItemGroup>

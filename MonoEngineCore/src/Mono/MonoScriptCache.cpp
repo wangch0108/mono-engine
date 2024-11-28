@@ -41,6 +41,15 @@ int MonoScriptCache::RefCount() const
 	return refCounter.Count();
 }
 
+MonoMethodPtr MonoScriptCache::GetCachedMethod(int index)
+{
+	if (index < 0 || index >= kMethodCount)
+		return nullptr;
+
+	auto& cachedMethod = methods[index];
+	return cachedMethod;
+}
+
 static MonoScriptCache::IdentifierHashType GenerateMonoScriptCacheHash(MonoClassPtr klass)
 {
 	void* hash = klass.Hash();
@@ -50,7 +59,7 @@ static MonoScriptCache::IdentifierHashType GenerateMonoScriptCacheHash(MonoClass
 static void PopulateMethods(MonoScriptCache& cache, MonoClassPtr klass)
 {
 	typedef std::vector<MonoMethodPtr> MethodVector;
-	typedef std::map<const char*, MonoMethodPtr> MethodMap;
+	typedef std::map<std::string, MonoMethodPtr> MethodMap;
 
 	// Check all methods we support
 	MethodVector allMethods;
