@@ -64,5 +64,6 @@ MonoMethodPtr FindStaticMonoMethod(const char* nameSpace, const char* className,
 MonoMethodPtr FindStaticMonoMethod(MonoImagePtr image, const char* nameSpace, const char* className, const char* methodName);
 
 bool InitializeMonoFromMain(const std::vector<std::string>& monoPaths, const std::string& monoConfigPath, const std::string& dataPath);
+void CleanupMono();
 void CallScriptingMain(); // Test function
 

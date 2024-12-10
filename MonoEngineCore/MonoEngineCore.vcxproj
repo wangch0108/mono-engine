@@ -116,13 +116,16 @@
     <ClInclude Include="src\Mono\MonoUtility.h" />
     <ClInclude Include="src\PlatformDependent\Win\WinUnicode.h" />
     <ClInclude Include="src\PlatformDetection.h" />
+    <ClInclude Include="src\Scripting\Behaviour.h" />
     <ClInclude Include="src\Scripting\GameObject.h" />
     <ClInclude Include="src\Scripting\GameObjectManager.h" />
     <ClInclude Include="src\Scripting\BaseObject.h" />
     <ClInclude Include="src\Scripting\GameObjectUtility.h" />
+    <ClInclude Include="src\Scripting\ObjectDefines.h" />
     <ClInclude Include="src\Scripting\Scripting.h" />
     <ClInclude Include="src\Thread\AtomicOps.h" />
     <ClInclude Include="src\Thread\AtomicRefCounter.h" />
+    <ClInclude Include="src\Utility\LinkedList.h" />
     <ClInclude Include="src\Utility\LoadDylib.h" />
     <ClInclude Include="src\Utility\LocalFileSystemWindows.h" />
     <ClInclude Include="src\Utility\PathNameUtility.h" />
@@ -145,6 +148,7 @@
     <ClCompile Include="src\Mono\MonoScriptCache.cpp" />
     <ClCompile Include="src\Mono\MonoTypes.cpp" />
     <ClCompile Include="src\Scripting\BaseObject.cpp" />
+    <ClCompile Include="src\Scripting\Behaviour.cpp" />
     <ClCompile Include="src\Scripting\GameObject.cpp" />
     <ClCompile Include="src\Scripting\GameObjectManager.cpp" />
     <ClCompile Include="src\Scripting\GameObjectUtility.cpp" />

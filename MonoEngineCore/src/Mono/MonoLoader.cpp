@@ -38,8 +38,21 @@ bool LoadMono(const std::string& libraryPath)
 	return true;
 }
 
+void UnloadMono()
+{
+	#define DO_API(r, n, p) n = nullptr;
+	#include "MonoFunctions.h"
+
+	if (GMonoModule)
+	{
+		UnloadDynamicLibrary(GMonoModule);
+		GMonoModule = nullptr;
+		GMonoModulePath.clear();
+	}
+}
+
 bool LoadAndInitializeMono(const std::vector<std::string>& monoPaths, const std::string& monoConfigPath,
-	const std::string& dataPath, const std::string& monoDll)
+                           const std::string& dataPath, const std::string& monoDll)
 {
 	if (!LoadMono(monoDll))
 		return false;

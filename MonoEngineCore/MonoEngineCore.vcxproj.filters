@@ -92,6 +92,9 @@
     <ClInclude Include="src\Scripting\Scripting.h" />
     <ClInclude Include="src\CoreMacros.h" />
     <ClInclude Include="src\Scripting\GameObjectUtility.h" />
+    <ClInclude Include="src\Utility\LinkedList.h" />
+    <ClInclude Include="src\Scripting\Behaviour.h" />
+    <ClInclude Include="src\Scripting\ObjectDefines.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
@@ -142,6 +145,7 @@
     <ClCompile Include="src\Export\Object.bindings.cpp" />
     <ClCompile Include="src\Scripting\Scripting.cpp" />
     <ClCompile Include="src\Scripting\GameObjectUtility.cpp" />
+    <ClCompile Include="src\Scripting\Behaviour.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

@@ -1,9 +1,12 @@
 #pragma once
 #include "Mono/MonoTypes.h"
+#include "ObjectDefines.h"
 
 class Object
 {
 public:
+	typedef Object ThisType;
+
 	Object() = default;
 
 	virtual const char* GetName() const { return ""; }

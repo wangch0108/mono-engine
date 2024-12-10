@@ -1,8 +1,14 @@
 #include "mepch.h"
 #include "Application.h"
+
 #include "EditorMonoLoader.h"
+#include "Mono/MonoLoader.h"
 #include "Mono/MonoManager.h"
+#include "Scripting/Behaviour.h"
 #include "Utility/VirtualFileSystem.h"
+
+#include <chrono>
+#include <thread>
 
 static Application GApplication;
 
@@ -23,6 +29,28 @@ void Application::Init()
 	 */
 
 	CallScriptingMain();
+	Update();
+}
+
+void Application::Deinit()
+{
+	CleanupMono();
+	UnloadMono();
+}
+
+void Application::Update()
+{
+	while (_isRunning)
+	{
+		// PlayerLoop ...
+		GetFixedBehaviourManager().Update();
+		GetBehaviourManager().Update();
+		GetLateBehaviourManager().Update();
+
+		// Simulate works
+		std::this_thread::sleep_for(std::chrono::milliseconds(66)); // fps: 30
+		std::cout << "Frame <" << ++_frameCount << "> finished.\n";
+	}
 }
 
 Application& GetApplication()

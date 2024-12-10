@@ -12,6 +12,7 @@ DO_API(MonoDomain*, mono_jit_init_version, (const char* file, const char* runtim
 DO_API(char*, mono_get_runtime_build_info, ())
 DO_API(void, mono_set_dirs, (const char* assembly_dir, const char* config_dir))
 DO_API(void, mono_config_parse, (const char* filename))
+DO_API(void, mono_jit_cleanup, (MonoDomain* domain))
 
 DO_API(MonoDomain*, mono_get_root_domain, (void)) // Get root domain
 DO_API(MonoDomain*, mono_domain_get, (void)) // Get Activated domain(AppDomain)

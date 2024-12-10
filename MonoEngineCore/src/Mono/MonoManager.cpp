@@ -3,6 +3,7 @@
 #include "MonoIncludes.h"
 #include "MonoInvocation.h"
 #include "MonoApi.h"
+#include "Scripting/Behaviour.h"
 #include "Utility/PathNameUtility.h"
 #include "Export/MonoExport.h"
 
@@ -430,9 +431,18 @@ bool InitializeMonoFromMain(const std::vector<std::string>& monoPaths, const std
 	manager.ListTypesInScriptImage();
 	manager.FillCommonScriptingClasses();
 
+	Behaviour::InitializeClass();
+
 	std::cout << "Mono initialize success!\n";
 
 	return true;
+}
+
+void CleanupMono()
+{
+	mono_jit_cleanup(mono_get_root_domain());
+
+	std::cout << "Mono cleanup!\n";
 }
 
 void CallScriptingMain()
